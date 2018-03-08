@@ -1,0 +1,28 @@
+# domain: mmusangeya.com
+# public: /var/www/mmusangeya.com/public_html/
+<VirtualHost *:80>
+  # Admin email, Server Name (domain name), and any aliases
+  ServerAdmin michael@mmusangeya.com
+  ServerName  www.mmusangeya.com
+  ServerAlias mmusangeya.com
+
+  # Index file and Document Root (where the public files are located)
+  DirectoryIndex index.html index.php
+  DocumentRoot /var/www/mmusangeya.com/public_html
+  # Log file locations
+  LogLevel warn
+  ErrorLog  /var/www/mmusangeya.com/log/error.log
+  CustomLog /var/www/mmusangeya.com/log/access.log combined
+  <Directory "/var/www/mmusangeya.com/public_html">
+    AllowOverride All
+  </Directory>
+RewriteEngine on
+RewriteCond %{SERVER_NAME} =www.mmusangeya.com [OR]
+RewriteCond %{SERVER_NAME} =mmusangeya.com
+RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
+</VirtualHost>
+
+#done
+
+
+
