@@ -1,24 +1,24 @@
-# domain: mmusangeya.com
-# public: /var/www/mmusangeya.com/public_html/
+# domain: mysite.com
+# public: /var/www/mysite.com/public_html/
 <VirtualHost *:80>
   # Admin email, Server Name (domain name), and any aliases
-  ServerAdmin michael@mmusangeya.com
-  ServerName  www.mmusangeya.com
-  ServerAlias mmusangeya.com
+  ServerAdmin mike@mysite.com
+  ServerName  www.mysite.com
+  ServerAlias mysite.com
 
   # Index file and Document Root (where the public files are located)
   DirectoryIndex index.html index.php
-  DocumentRoot /var/www/mmusangeya.com/public_html
+  DocumentRoot /var/www/mysite.com/public_html
   # Log file locations
   LogLevel warn
-  ErrorLog  /var/www/mmusangeya.com/log/error.log
-  CustomLog /var/www/mmusangeya.com/log/access.log combined
-  <Directory "/var/www/mmusangeya.com/public_html">
+  ErrorLog  /var/www/mysite.com/log/error.log
+  CustomLog /var/www/mysite.com/log/access.log combined
+  <Directory "/var/www/mysite.com/public_html">
     AllowOverride All
   </Directory>
 RewriteEngine on
-RewriteCond %{SERVER_NAME} =www.mmusangeya.com [OR]
-RewriteCond %{SERVER_NAME} =mmusangeya.com
+RewriteCond %{SERVER_NAME} =www.mysite.com [OR]
+RewriteCond %{SERVER_NAME} =mysite.com
 RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
 </VirtualHost>
 

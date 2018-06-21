@@ -1,5 +1,9 @@
 #!/bin/sh
 
+
+
+#This doesn't work, I am too lazy to fix. add to that the fact that I switched to nginx I doubt it will ever be fixed.
+
 echo "Starting Setup."
 SITENAME="site.com"
 FQDN="www.site.com"

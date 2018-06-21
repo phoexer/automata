@@ -3,6 +3,12 @@
 echo "Starting Setup."
 
 apt-get update
+
+apt-get install software-properties-common
+add-apt-repository ppa:certbot/certbot
+
+apt-get update
+
 apt-get install -y apache2
 
 ufw allow in "Apache Full"
@@ -17,3 +23,5 @@ apt-get install -y php7.0 php-pear libapache2-mod-php7.0 php7.0-mysql php7.0-cur
 systemctl restart apache2
 
 apt install -y phpmyadmin
+
+apt-get install -y python-certbot-apache
