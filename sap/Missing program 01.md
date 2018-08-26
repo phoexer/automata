@@ -2,9 +2,10 @@
 With programs crying about missing programs of the form
 
 /1PAPA/FEAT400ABKRS
+/1PAPA/FEAT400SCHKZ
 
 you need to activate the feature  in PE03, feature name is the last 5 characters
-so for above it's ABKRS
+so for above it's ABKRS and SCHKZ
 
 Cause, bad client copy.
 
